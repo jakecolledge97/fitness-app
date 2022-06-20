@@ -1,21 +1,36 @@
 import './LoginPage.css'
 import { useState } from 'react';
+import LoginForm from './LoginForm/LoginForm';
 
 
 
 const LoginPage = () => {
-
-    const handleSubmit = (event) => {
-        // Prevent page reload
-        event.preventDefault();
+    const adminUser = {
+        email: "email@admin.com",
+        password: "password"
     };
+
+    const [user, setUser] = useState({name: "", email: ""});
+    const [error, setError] = useState("");
+
+    const login = details => {
+        console.log(details);
+    }
+
+    const logout = () => {
+        console.log("Logout");
+    }
 
     return (
         <div className='loginPage'>
-            <div className='loginFormContainer'>
-                <form onSubmit={handleSubmit}></form>
-            </div>
-            Login Page
+            {(user.email != "") ? (
+                <div className='welcome'>
+                    <h2>Welcome, <span>{user.name}</span></h2>
+                    <button>Logout</button>
+                </div>
+            ) : (
+                <LoginForm login={login} error={error}/>
+            )}
         </div>
     );
 }
