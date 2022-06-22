@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <LoginPage />
-        {data}
+        {!data ? "Loading..." : data}
       </header>
     </div>
   );
