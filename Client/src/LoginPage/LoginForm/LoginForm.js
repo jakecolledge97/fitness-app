@@ -12,19 +12,16 @@ const LoginForm = ({login, error}) => {
 
     return (
         <form className="loginForm" onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2>Fitness</h2>
             {/* ERROR! */}
             <div className="form-group">
-                <label htmlFor="name">Name: </label><br/>
-                <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
+                <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} placeholder="Name"/>
             </div>
             <div className="form-group">
-                <label htmlFor="email">Email: </label><br/>
-                <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+                <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} placeholder="Email"/>
             </div>
             <div className="form-group">
-                <label htmlFor="password">Password: </label><br/>
-                <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
+                <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} placeholder="Password"/>
             </div>
             <input class="login-button"type="submit" value="Login" />
         </form>

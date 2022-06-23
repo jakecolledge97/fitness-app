@@ -9,9 +9,18 @@
 }
 
 .loginForm .form-group input{
+    background-color: #6245BB;
+    color: white;
+    font-size: small;
+    margin: 5px 0px;
     padding: 1px 2px;
     border: 0px;
+    border-bottom: grey solid 1px;
     border-radius: 2px;
+}
+
+.loginForm .form-group input::placeholder{
+    color: white;
 }
 
 .loginForm .form-group input:focus-visible{
