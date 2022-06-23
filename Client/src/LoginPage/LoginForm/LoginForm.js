@@ -12,7 +12,6 @@ const LoginForm = ({login, error}) => {
 
     return (
         <form className="loginForm" onSubmit={handleSubmit}>
-            <h2>Fitness</h2>
             {/* ERROR! */}
             <div className="form-group">
                 <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} placeholder="Name"/>

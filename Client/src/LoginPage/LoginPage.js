@@ -23,13 +23,22 @@ const LoginPage = () => {
 
     return (
         <div className='loginPage'>
-            {(user.email !== "") ? (
+            {(user.email !== "" || user.name !== "") ? (
                 <div className='welcome'>
-                    <h2>Welcome, <span>{user.name}</span></h2>
+                    {(user.name.toLowerCase() !== "jade") ? (
+                        <h2>Welcome, <span>{user.name}</span></h2>
+                    ) : (
+                        <h2>I ❤️ You</h2> 
+                    )}
+
                     <button onClick={logout}>Logout</button>
                 </div>
             ) : (
-                <LoginForm login={login} error={error}/>
+                <>
+                    <h2>Fitness</h2>
+                    <LoginForm login={login} error={error}/>
+                </>
+
             )}
         </div>
     );

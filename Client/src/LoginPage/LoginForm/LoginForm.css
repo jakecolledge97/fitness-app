@@ -1,7 +1,14 @@
 .loginForm {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 85%;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+    color: black;
     align-items: center;
+    align-self: end;
 }
 
 .loginForm .form-group label{
@@ -9,18 +16,13 @@
 }
 
 .loginForm .form-group input{
-    background-color: #6245BB;
-    color: white;
+    color: black;
     font-size: small;
     margin: 5px 0px;
     padding: 1px 2px;
     border: 0px;
     border-bottom: grey solid 1px;
     border-radius: 2px;
-}
-
-.loginForm .form-group input::placeholder{
-    color: white;
 }
 
 .loginForm .form-group input:focus-visible{
