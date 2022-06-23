@@ -1,0 +1,35 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm .form-group label{
+    font-size: small;
+}
+
+.loginForm .form-group input{
+    padding: 1px 2px;
+    border: 0px;
+    border-radius: 2px;
+}
+
+.loginForm .form-group input:focus-visible{
+    outline: none;
+}
+
+.login-button{
+    margin-top: 5px;
+    background-color: white;
+    color: #663fdb;
+    border: 0px;
+    border-radius: 2px;
+    border: #6245BB solid 1px;
+}
+
+.login-button:hover{
+    background-color: #6245BB;
+    color: white;
+    border: white solid 1px;
+    
+}

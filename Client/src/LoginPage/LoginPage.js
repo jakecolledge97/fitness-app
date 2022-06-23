@@ -14,11 +14,11 @@ const LoginPage = () => {
     const [error, setError] = useState("");
 
     const login = details => {
-        console.log(details);
+        setUser({name: details.name, email: details.email});
     }
 
     const logout = () => {
-        console.log("Logout");
+        setUser({name: "", email: ""});
     }
 
     return (
