@@ -1,6 +1,8 @@
 import './LoginPage.css'
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm/LoginForm';
+import SignUpForm from './SignUpForm/SignUpForm';
 
 
 
@@ -14,7 +16,20 @@ const LoginPage = () => {
     const [error, setError] = useState("");
 
     const login = details => {
-        setUser({name: details.name, email: details.email});
+        if(details.email === adminUser.email && details.password === adminUser.password){
+            console.log("logged in");
+            setUser({
+                name: details.name,
+                email: details.email
+            });
+        }else{
+            console.log("Details don't match");
+            setError("Details don't match");
+        }
+    }
+
+    const signUp = details => {
+        console.log("signUp")
     }
 
     const logout = () => {
@@ -23,7 +38,7 @@ const LoginPage = () => {
 
     return (
         <div className='loginPage'>
-            {(user.email !== "" || user.name !== "") ? (
+            {(user.email !== "") ? (
                 <div className='welcome'>
                     {(user.name.toLowerCase() !== "jade") ? (
                         <h2>Welcome, <span>{user.name}</span></h2>
@@ -36,7 +51,10 @@ const LoginPage = () => {
             ) : (
                 <>
                     <h2>Fitness</h2>
-                    <LoginForm login={login} error={error}/>
+                    <Routes>
+                        <Route path="/login" element={<LoginForm login={login} error={error}/>}/>
+                        <Route path="/signUp" element={<SignUpForm signUp={signUp} error={error}/>}/>
+                    </Routes>
                 </>
 
             )}

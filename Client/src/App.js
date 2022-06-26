@@ -1,5 +1,6 @@
 import React from "react";
-import LoginPage from "./LoginPage/LoginPage";
+import { Routes } from "react-router-dom";
+import LoginPage from "./components/LoginPage/LoginPage";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -10,14 +11,14 @@ function App() {
       .then((data) => setData(data.message));
   }, []);
 
-  return (
+  return ( 
     <div className="App">
       <header className="App-header">
         <LoginPage />
         {!data ? "Loading..." : data}
       </header>
     </div>
-  );
+  ); 
 }
 
 export default App;

@@ -1,4 +1,4 @@
-.loginForm {
+.signUpForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,11 +11,11 @@
     align-self: end;
 }
 
-.loginForm .form-group label{
+.signUpForm .form-group label{
     font-size: small;
 }
 
-.loginForm .form-group input{
+.signUpForm .form-group input{
     color: black;
     font-size: small;
     margin: 5px 0px;
@@ -25,22 +25,21 @@
     border-radius: 2px;
 }
 
-.loginForm .form-group input:focus-visible{
+.signUpForm .form-group input:focus-visible{
     outline: none;
 }
 
-.login-button{
+.signup-button{
     margin-top: 5px;
-    background-color: white;
-    color: #663fdb;
+    background-color:#6245BB;
+    color: white;
     border: 0px;
     border-radius: 2px;
-    border: #6245BB solid 1px;
+    border: white solid 1px;
 }
 
-.login-button:hover{
-    background-color: #6245BB;
-    color: white;
-    border: white solid 1px;
-    
+.signup-button:hover{
+    background-color: white;
+    color: #663fdb;
+    border: #6245BB solid 1px; 
 }
