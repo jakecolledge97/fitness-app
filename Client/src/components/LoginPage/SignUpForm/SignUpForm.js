@@ -1,12 +1,16 @@
 import './SignUpForm.css';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
+import { useState } from 'react';
 
-const SignUpForm = ({signUp, error}) => {
+const SignUpForm = (error) => {
+    const [details, setDetails] = useState({name: '', email: '', password: '', verifyPassword: ''});
+    const {signUp} = useAuth();
 
     const handleSubmit = e => {
         e.preventDefault();
         signUp();
-    }
+    };
 
     return (
 
@@ -22,7 +26,7 @@ const SignUpForm = ({signUp, error}) => {
                 <input type="password" name="password" id="password" placeholder="Desired Password"/>
             </div>
             <div className="form-group">
-                <input type="password" name="verify-password" id="verify-password" placeholder="Re-enter Password"/>
+                <input type="password" name="verify-password" id="verify-password" placeholder="Re-enter Password" onChange={e => setDetails({...details, verifyPassword: e.target.value})} value={details.verifyPassword} />
             </div>
             <input class="signup-button" type="submit" value="sign Up" />
             <h6 className="noAccount">Already have an Account? <span><Link to="/Login">Log In</Link></span></h6>

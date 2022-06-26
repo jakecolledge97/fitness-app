@@ -24,7 +24,7 @@ const LoginForm = ({login, error, signUpView}) => {
             <div className="form-group">
                 <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} placeholder="Password"/>
             </div>
-            <input class="login-button" type="submit" value="Login" />
+            <input className="login-button" type="submit" value="Login" />
             <h6 className="noAccount">Don't have an Account? <span><Link to="/SignUp">Sign Up</Link></span></h6>
         </form>
     );
