@@ -9,7 +9,9 @@ const SignUpForm = ({signUp, error}) => {
     }
 
     return (
+
         <form className="signUpForm" onSubmit={handleSubmit}>
+            <h2>Sign Up</h2>
             <div className="form-group">
                 <input type="text" name="name" id="name" placeholder="Desired Username" />
             </div>

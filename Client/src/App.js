@@ -1,5 +1,4 @@
 import React from "react";
-import { Routes } from "react-router-dom";
 import LoginPage from "./components/LoginPage/LoginPage";
 
 function App() {

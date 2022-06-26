@@ -13,6 +13,7 @@ const LoginForm = ({login, error, signUpView}) => {
 
     return (
         <form className="loginForm" onSubmit={handleSubmit}>
+            <h2>Log In</h2>
             {(error !== "") ? (<div className='error'>{error}</div>) : ""}
             <div className="form-group">
                 <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} placeholder="Name"/>
