@@ -1,13 +1,21 @@
 import './SignUpForm.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { 
+    createUserWithEmailAndPassword,
+    onAuthStateChanged
+} from 'firebase/auth';
 import { auth } from '../../../firebase';
 
 const SignUpForm = () => {
     const [details, setDetails] = useState({name: '', email: '', password: '', verifyPassword: ''});
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [user, setUser] = useState({});
+
+    onAuthStateChanged(auth, (currentUser)=> {
+        setUser(currentUser)
+    })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,7 +43,7 @@ const SignUpForm = () => {
 
         <form className="signUpForm" onSubmit={handleSubmit}>
             <h2>Sign Up</h2>
-            {(auth.currentUser?.email)}
+            {(user.email)}
             {(error !== "") ? (<div className='error'>{error}</div>) : ""}
             <div className="form-group">
                 <input type="text" name="name" id="name" placeholder="Desired Username" onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
